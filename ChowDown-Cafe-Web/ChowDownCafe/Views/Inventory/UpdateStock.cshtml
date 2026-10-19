@@ -1,0 +1,97 @@
+﻿@model ChowDownCafe.Models.Product
+
+@{
+    ViewData["Title"] = "Update Stock";
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-6">
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>Update Stock</h1>
+
+                <a asp-controller="Inventory"
+                   asp-action="Index"
+                   class="btn btn-outline-secondary">
+                    Back to Inventory
+                </a>
+            </div>
+
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger">
+                    @TempData["ErrorMessage"]
+                </div>
+            }
+
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    <h5 class="mb-0">@Model.ProductName</h5>
+                </div>
+
+                <div class="card-body">
+
+                    <div class="mb-3">
+                        <label class="form-label">Category</label>
+                        <input type="text"
+                               class="form-control"
+                               value="@Model.Category"
+                               readonly />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Current Stock</label>
+                        <input type="text"
+                               class="form-control"
+                               value="@Model.QuantityInStock @Model.Unit"
+                               readonly />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Minimum Stock Level</label>
+                        <input type="text"
+                               class="form-control"
+                               value="@Model.MinimumStockLevel @Model.Unit"
+                               readonly />
+                    </div>
+
+                    <form asp-controller="Inventory"
+                          asp-action="UpdateStock"
+                          asp-route-id="@Model.ProductId"
+                          method="post">
+
+                        @Html.AntiForgeryToken()
+
+                        <div class="mb-3">
+                            <label for="quantityInStock"
+                                   class="form-label">
+                                New Stock Quantity (@Model.Unit)
+                            </label>
+
+                            <input type="number"
+                                   id="quantityInStock"
+                                   name="quantityInStock"
+                                   class="form-control"
+                                   min="0"
+                                   step="0.01"
+                                   value="@Model.QuantityInStock"
+                                   required />
+
+                            <div class="form-text">
+                                Enter the total quantity currently available.
+                                Stock cannot be negative.
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100">
+                            Save Stock Update
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
