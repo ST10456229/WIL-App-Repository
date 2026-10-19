@@ -32,4 +32,8 @@ Desktop.ini
 
 # Logs
 *.log
-logs/
+logs/**/appsettings.Development.json
+.env
+.env.*
+!.env.example
+**/UserSecrets/

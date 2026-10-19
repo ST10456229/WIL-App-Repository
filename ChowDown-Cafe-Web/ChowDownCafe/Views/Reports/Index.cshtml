@@ -1,0 +1,85 @@
+﻿@{
+    ViewData["Title"] = "Reports Dashboard";
+}
+
+<div class="container-fluid mt-4">
+    <!-- Header Summary Block -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="h2 text-dark">📊 Chow Down Cafe Analytics</h1>
+        <span class="badge bg-secondary p-2">Live System Reports</span>
+    </div>
+
+    <!-- Analytics Dashboard Cards -->
+    <div class="row g-4 mb-4">
+        <!-- Sales Card -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm border-start border-primary border-4">
+                <div class="card-body">
+                    <h6 class="text-muted text-uppercase small">Total Sales</h6>
+                    <h3 class="card-title my-2" id="totalSales">R 0.00</h3>
+                    <p class="text-success mb-0 small"><i class="bi bi-arrow-up"></i> Invoiced System Total</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orders Count Card -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm border-start border-success border-4">
+                <div class="card-body">
+                    <h6 class="text-muted text-uppercase small">Orders Processed</h6>
+                    <h3 class="card-title my-2" id="orderCount">0</h3>
+                    <p class="text-muted mb-0 small">From database logs</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Alerts Card -->
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm border-start border-warning border-4">
+                <div class="card-body">
+                    <h6 class="text-muted text-uppercase small">Inventory Alerts</h6>
+                    <h3 class="card-title my-2 text-warning" id="lowStockAlerts">Checking...</h3>
+                    <p class="text-muted mb-0 small">Items flagged below baseline</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Tables Grid Section -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-0 shadow-sm">
+                <div class="card-header bg-white py-3">
+                    <h5 class="card-title mb-0">Recent Invoices & Customer Status</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer Name</th>
+                                    <th>Status</th>
+                                    <th>Order Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Mock record illustrating live data format -->
+                                <tr>
+                                    <td><strong>#1</strong></td>
+                                    <td>Siphamandla Tshabalala</td>
+                                    <td><span class="badge bg-warning text-dark">Pending</span></td>
+                                    <td>2026-10-19 11:29 AM</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-outline-secondary">View Items</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

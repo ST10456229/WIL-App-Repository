@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "Staff Login";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+
+            <div class="text-center mb-4">
+                <h1 class="fw-bold">CHOWDOWN CAFE</h1>
+                <p class="text-muted">Staff Management Portal</p>
+            </div>
+
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4 p-md-5">
+
+                    <div class="text-center mb-4">
+                        <div class="mb-3">
+                            <i class="bi bi-person-lock"
+                               style="font-size: 3rem;"></i>
+                        </div>
+
+                        <h3 class="fw-bold">Staff Login</h3>
+                        <p class="text-muted">
+                            Sign in to manage cafe operations.
+                        </p>
+                    </div>
+
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger" role="alert">
+                            @ViewBag.Error
+                        </div>
+                    }
+
+                    <form asp-controller="Account"
+                          asp-action="Login"
+                          method="post"
+                          autocomplete="off">
+
+                        @Html.AntiForgeryToken()
+
+                        <input type="hidden"
+                               name="returnUrl"
+                               value="@ViewBag.ReturnUrl" />
+
+                        <div class="mb-3">
+                            <label for="username" class="form-label">
+                                Management Email
+                            </label>
+
+                            <input type="email"
+                                   id="username"
+                                   name="username"
+                                   class="form-control form-control-lg"
+                                   placeholder="Enter management email"
+                                   autocomplete="off"
+                                   value=""
+                                   required />
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="password" class="form-label">
+                                Password
+                            </label>
+
+                            <input type="password"
+                                   id="password"
+                                   name="password"
+                                   class="form-control form-control-lg"
+                                   placeholder="Enter password"
+                                   autocomplete="new-password"
+                                   value=""
+                                   required />
+                        </div>
+
+                        <button type="submit"
+                                class="btn btn-dark btn-lg w-100">
+                            Sign In
+                        </button>
+                    </form>
+
+                    <div class="text-center mt-4">
+                        <a asp-controller="Home"
+                           asp-action="Index"
+                           class="text-decoration-none text-muted">
+                            &larr; Back to Home
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <p class="text-center text-muted small mt-4">
+                Good Food. Great Moments.
+            </p>
+
+        </div>
+    </div>
+</div>

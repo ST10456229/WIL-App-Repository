@@ -1,0 +1,137 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ChowDown Cafe</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/ChowDownCafe.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid px-4">
+
+                <a class="navbar-brand fw-bold"
+                   asp-controller="Home"
+                   asp-action="Index">
+                    <img src="~/css/images/chowdown-logo.jpg"
+                         alt="ChowDown Cafe logo"
+                         style="height: 42px; width: auto; margin-right: 10px;" />
+                    CHOWDOWN CAFE
+                </a>
+
+                @if (User.Identity?.IsAuthenticated == true)
+                {
+                    <button class="navbar-toggler"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#chowDownNavbar"
+                            aria-controls="chowDownNavbar"
+                            aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                }
+
+                <div class="collapse navbar-collapse" id="chowDownNavbar">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                        @if (User.Identity?.IsAuthenticated == true)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   asp-controller="Home"
+                                   asp-action="Index">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   asp-controller="Dashboard"
+                                   asp-action="Index">Dashboard</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   asp-controller="Menu"
+                                   asp-action="Index">Menu Management</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   asp-controller="Orders"
+                                   asp-action="Index">Orders</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   asp-controller="Inventory"
+                                   asp-action="Index">Inventory</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   asp-controller="Promotions"
+                                   asp-action="Index">Promotions</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   asp-controller="Reports"
+                                   asp-action="Sales">Reports</a>
+                            </li>
+
+                            <li class="nav-item ms-lg-2">
+                                <form asp-controller="Account"
+                                      asp-action="Logout"
+                                      method="post"
+                                      class="d-inline">
+                                    <button type="submit" class="btn btn-chow">
+                                        Logout
+                                    </button>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            @if (ViewContext.RouteData.Values["controller"]?.ToString() != "Account")
+                            {
+                                <li class="nav-item ms-lg-2">
+                                    <a class="btn btn-chow"
+                                       asp-controller="Account"
+                                       asp-action="Login">
+                                        Staff Login
+                                    </a>
+                                </li>
+                            }
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <footer class="text-center py-4">
+        <div class="container">
+            <p class="mb-1 fw-bold">CHOWDOWN CAFE</p>
+            <p class="mb-1">Good Food. Great Moments.</p>
+            <small>&copy; @DateTime.Now.Year ChowDown Cafe. All rights reserved.</small>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

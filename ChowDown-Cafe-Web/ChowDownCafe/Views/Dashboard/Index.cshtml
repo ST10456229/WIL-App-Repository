@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Management Dashboard";
+}
+
+<section class="dashboard-page">
+    <div class="dashboard-heading">
+        <p class="eyebrow">CHOWDOWN CAFE MANAGEMENT</p>
+        <h1>Management <span>Dashboard</span></h1>
+        <p>Welcome to your central hub for managing daily café operations.</p>
+    </div>
+
+    <div class="dashboard-cards">
+        <div class="dashboard-card">
+            <div class="dashboard-icon">🧾</div>
+            <h3>Orders</h3>
+            <p>Manage incoming customer orders and track their progress.</p>
+            <a asp-controller="Orders" asp-action="Index">Manage Orders →</a>
+        </div>
+
+        <div class="dashboard-card">
+            <div class="dashboard-icon">🍔</div>
+            <h3>Menu</h3>
+            <p>Add food items, update prices and control availability.</p>
+            <a asp-controller="Menu" asp-action="Index">Manage Menu →</a>
+        </div>
+
+        <div class="dashboard-card">
+            <div class="dashboard-icon">📦</div>
+            <h3>Inventory</h3>
+            <p>Monitor café stock and identify items that need replenishing.</p>
+            <a asp-controller="Inventory" asp-action="Index">Manage Inventory →</a>
+        </div>
+
+        <div class="dashboard-card">
+            <div class="dashboard-icon">🎯</div>
+            <h3>Promotions</h3>
+            <p>Prepare and manage special offers for customers.</p>
+            <a asp-controller="Promotions" asp-action="Index">Manage Promotions →</a>
+        </div>
+
+        <div class="dashboard-card">
+            <div class="dashboard-icon">📊</div>
+            <h3>Reports</h3>
+            <p>Review café performance and operational information.</p>
+            <a asp-controller="Reports" asp-action="Index">View Reports →</a>
+        </div>
+
+        <div class="dashboard-card">
+            <div class="dashboard-icon">⚙️</div>
+            <h3>Administration</h3>
+            <p>Provide authorised staff with access to management tools.</p>
+            <a asp-controller="Account" asp-action="Login">Staff Login →</a>
+        </div>
+    </div>
+</section>
