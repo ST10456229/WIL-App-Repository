@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ChowDown2" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize light theme here. -->
+        <item name="colorPrimary">@color/primary_red</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/purple_accent</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:windowBackground">@color/bg_light_blue_grey</item>
+        <item name="android:statusBarColor">@color/bg_light_blue_grey</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <style name="Theme.ChowDown2" parent="Base.Theme.ChowDown2" />
+</resources>
