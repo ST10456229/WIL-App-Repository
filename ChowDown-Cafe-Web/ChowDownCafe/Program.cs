@@ -1,12 +1,26 @@
-
 using Microsoft.EntityFrameworkCore;
 using ChowDownCafe.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add MVC services.
-builder.Services.AddControllersWithViews();
+// Add MVC & Controller services with JSON options.
+builder.Services.AddControllersWithViews()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.PropertyNamingPolicy = System.Text.Json.JsonNamingPolicy.CamelCase;
+    });
+
+// Enable CORS for mobile app requests.
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
 
 // Connect Entity Framework Core to the ChowDown database.
 builder.Services.AddDbContext<ChowDownDbContext>(options =>
@@ -41,7 +55,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+app.UseCors("AllowAll");
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -49,6 +63,8 @@ app.UseRouting();
 // Authentication must run before authorization.
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapControllers();
 
 app.MapControllerRoute(
     name: "default",
