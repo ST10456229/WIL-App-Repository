@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Chow Down Brand Colors -->
+    <color name="primary_red">#E53935</color>
+    <color name="primary_red_dark">#C62828</color>
+    <color name="primary_red_light">#FFEBEE</color>
+
+    <color name="purple_accent">#6C5CE7</color>
+    <color name="purple_accent_light">#E8E5FA</color>
+
+    <color name="bg_light_blue_grey">#F4F6F9</color>
+    <color name="card_bg">#FFFFFF</color>
+
+    <color name="text_primary">#1A1B22</color>
+    <color name="text_secondary">#6E717C</color>
+    <color name="text_muted">#A0A4B0</color>
+    <color name="divider">#E2E8F0</color>
+
+    <color name="dark_banner_bg">#181A20</color>
+    <color name="dark_card_bg">#262A34</color>
+
+    <color name="star_gold">#FFC107</color>
+    <color name="green_success">#4CAF50</color>
+    <color name="orange_warning">#FF9800</color>
+    <color name="blue_info">#2196F3</color>
+    <color name="grey_nav_unselected">#9E9E9E</color>
+</resources>

@@ -1,0 +1,38 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <!-- Outer Glow / Background Circle -->
+    <path
+        android:fillColor="#2A1B1B"
+        android:pathData="M100,10A90,90 0,1 0,190,100A90,90 0,0 0,100,10Z" />
+    <!-- Top Bun -->
+    <path
+        android:fillColor="#E67E22"
+        android:pathData="M40,90 C40,45 160,45 160,90 Z" />
+    <!-- Sesame Seeds -->
+    <path android:fillColor="#FFF8DC" android:pathData="M70,60 a3,2 0 1,0 6,0 a3,2 0 1,0 -6,0 Z" />
+    <path android:fillColor="#FFF8DC" android:pathData="M100,52 a3,2 0 1,0 6,0 a3,2 0 1,0 -6,0 Z" />
+    <path android:fillColor="#FFF8DC" android:pathData="M130,62 a3,2 0 1,0 6,0 a3,2 0 1,0 -6,0 Z" />
+    <!-- Lettuce -->
+    <path
+        android:fillColor="#2ECC71"
+        android:pathData="M35,92 Q50,85 65,95 Q80,85 95,95 Q110,85 125,95 Q140,85 165,92 L165,102 Q140,95 125,105 Q110,95 95,105 Q80,95 65,105 Q50,95 35,102 Z" />
+    <!-- Tomato -->
+    <path
+        android:fillColor="#E74C3C"
+        android:pathData="M40,104 L160,104 L160,114 L40,114 Z" />
+    <!-- Cheese -->
+    <path
+        android:fillColor="#F1C40F"
+        android:pathData="M38,114 L162,114 L145,130 L115,120 L85,135 L55,120 Z" />
+    <!-- Beef Patty -->
+    <path
+        android:fillColor="#5D4037"
+        android:pathData="M35,122 C35,122 35,142 45,142 L155,142 C165,142 165,122 165,122 Z" />
+    <!-- Bottom Bun -->
+    <path
+        android:fillColor="#D35400"
+        android:pathData="M42,144 L158,144 C158,144 158,162 140,162 L60,162 C42,162 42,144 42,144 Z" />
+</vector>
