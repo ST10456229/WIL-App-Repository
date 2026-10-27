@@ -1,7 +1,8 @@
 # ChowDown Café: Digital Ecosystem
 
 <div align="center">
-  <img width="454" height="288" alt="WhatsApp Image 2026-10-27 at 13 00 06 (1)" src="https://github.com/user-attachments/assets/b3d499e3-8b38-4e47-aab5-6548aecb7c2e" />
+
+  <img width="280" alt="ChowDown Cafe Logo" src="https://github.com/user-attachments/assets/f6048073-162c-4aee-8848-6cb1f312fdbe" />
 </div>
 
 
