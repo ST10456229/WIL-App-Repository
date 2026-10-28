@@ -108,7 +108,7 @@ Figma Prototype: [Insert Figma URL Here]
 
 Web Backend Repo: https://github.com/ST10456229/WIL-Repository.git
 
-Android App Repo: https://github.com/ST10458040/WIL-App-Repository.git
+Android App Repo: https://github.com/ST10456229/WIL-App-Repository.git
 
 ### 👥 The Team (Group Amajongo)
 Wandile Shobede – Chairperson & Mobile Support (ST10457381)
